@@ -2,7 +2,7 @@ import './App.css';
 import MyComponent from './MyComponent';
 
 const App = () => {
-    return <MyComponent />;
+    return <MyComponent>태그 사이값입니다</MyComponent>;
 };
 
 export default App;
