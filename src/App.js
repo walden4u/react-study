@@ -1,6 +1,4 @@
-import "./styles.css";
-
-export default function App() {
+function App() {
   const name = "리액트";
   return (
     <>
@@ -9,3 +7,5 @@ export default function App() {
     </>
   );
 }
+
+export default App;
