@@ -1,10 +1,11 @@
 import "./styles.css";
 
 export default function App() {
+  const name = "리액트";
   return (
     <>
-      <h1>리액트 안녕!</h1>
-      <h2>잘 작동하니???</h2>
+      <h1>{name}야 안녕!</h1>
+      <h2>잘 작동하니?????</h2>
     </>
   );
 }
