@@ -1,8 +1,8 @@
-import './App.css';
-import MyComponent from './MyComponent';
+import "./App.css";
+import EventPracticeClass from "../Component/EventPracticeClass";
 
 const App = () => {
-    return <MyComponent>태그사이값입니다</MyComponent>;
+  return <EventPracticeClass />;
 };
 
 export default App;
