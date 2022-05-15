@@ -1,8 +1,8 @@
-import "./App.css";
-import EventPracticeClass from "../Component/EventPracticeClass";
+import './App.css';
+import EventPractice from '../Component/EventPractice';
 
 const App = () => {
-  return <EventPracticeClass />;
+  return <EventPractice />;
 };
 
 export default App;
