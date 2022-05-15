@@ -1,8 +1,13 @@
 import './App.css';
-import EventPractice from '../Component/ValidationSampleClass';
+import ScrollBox from '../Component/ScrollBox';
 
 const App = () => {
-  return <EventPractice />;
+  return (
+    <div>
+      <ScrollBox ref={(ref) => (scrollBox = ref)} />
+      <button onClick={() => scrollBox.scrollToBottom()}>맨 밑으로</button>
+    </div>
+  );
 };
 
 export default App;
