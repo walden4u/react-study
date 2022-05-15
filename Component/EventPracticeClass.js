@@ -10,7 +10,7 @@ class EventPracticeClass extends Component {
           name="message"
           placeholder="아무거나 입려개 보세요"
           onChange={(e) => {
-            console.log(e);
+            console.log(e.target.value);
           }}
         />
       </div>
