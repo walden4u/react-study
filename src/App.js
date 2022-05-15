@@ -1,5 +1,5 @@
 import './App.css';
-import EventPractice from '../Component/EventPractice';
+import EventPractice from '../Component/ValidationSample';
 
 const App = () => {
   return <EventPractice />;
