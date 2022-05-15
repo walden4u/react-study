@@ -22,7 +22,7 @@ class ValidationSampleClass extends Component {
       clicked: true,
       validate: this.state.password === '0000'
     });
-    this.input.focus();
+    this.input.current.focus();
   };
 
   render() {
@@ -30,7 +30,7 @@ class ValidationSampleClass extends Component {
     return (
       <>
         <input
-          ref={(ref) => (this.input = ref)}
+          ref={this.input}
           className={clicked ? (validate ? 'success' : 'failure') : ''}
           onChange={this.onChangeInput}
           value={password}
