@@ -7,6 +7,7 @@ class ValidationSampleClass extends Component {
     clicked: false,
     validate: false
   };
+  input = React.createRef();
 
   // 1	인풋값이 입력되면 화면에 암호로 표시한다.
   onChangeInput = (e) => {
@@ -21,6 +22,7 @@ class ValidationSampleClass extends Component {
       clicked: true,
       validate: this.state.password === '0000'
     });
+    this.input.focus();
   };
 
   render() {
@@ -28,6 +30,7 @@ class ValidationSampleClass extends Component {
     return (
       <>
         <input
+          ref={(ref) => (this.input = ref)}
           className={clicked ? (validate ? 'success' : 'failure') : ''}
           onChange={this.onChangeInput}
           value={password}
