@@ -1,11 +1,10 @@
 import './App.css';
-import ScrollBox from '../Component/ScrollBox';
+import ScrollBox from '../Component/IterationSample';
 
 const App = () => {
   return (
     <div>
-      <ScrollBox ref={(ref) => (scrollBox = ref)} />
-      <button onClick={() => scrollBox.scrollToBottom()}>맨 밑으로</button>
+      <ScrollBox />
     </div>
   );
 };
