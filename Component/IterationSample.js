@@ -11,11 +11,22 @@ const IterationSample = () => {
   const [nextId, setNextId] = useState(5); // 새로운 항목을 추가할 때 사용할 id
 
   const onChangeInput = (e) => setInputText(e.target.value);
-  const namesList = names.map((name) => <li key={name.id}>{name.text}</li>);
+  const onClick = () => {
+    const nextNames = names.concat({
+      id: nextId,
+      text: inputText
+    });
+    setNextId(nextId + 1);
+    setNames(nextNames);
+    setInputText('');
+  };
+  const namesList = names.map((name) => {
+    return <li key={name.id}>{name.text}</li>;
+  });
   return (
     <>
       <input value={inputText} onChange={onChangeInput}></input>
-      <button>입력</button>
+      <button onClick={onClick}>입력</button>
       <ul>{namesList}</ul>;
     </>
   );
