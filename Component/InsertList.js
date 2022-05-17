@@ -24,9 +24,13 @@ const InsertList = () => {
     setInputText('');
   };
 
+  const onRemove = () => {};
+
   // 4	보여지는 리스트 생성하기
   const makeViewList = namesData.map((name) => (
-    <li key={name.id}>{name.text}</li>
+    <li key={name.id} onDoubleClick={onRemove}>
+      {name.text}
+    </li>
   ));
   console.log(makeViewList);
 

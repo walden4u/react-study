@@ -20,14 +20,23 @@ const IterationSample = () => {
     setNames(nextNames);
     setInputText('');
   };
+  const onRemove = (id) => {
+    const nextNames = names.filter((name) => name.id !== id);
+    setNames(nextNames);
+  };
   const namesList = names.map((name) => {
-    return <li key={name.id}>{name.text}</li>;
+    return (
+      <li key={name.id} onDoubleClick={() => onRemove(name.id)}>
+        {name.text}
+      </li>
+    );
   });
+
   return (
     <>
       <input value={inputText} onChange={onChangeInput}></input>
       <button onClick={onClick}>입력</button>
-      <ul>{namesList}</ul>;
+      <ul>{namesList}</ul>
     </>
   );
 };
