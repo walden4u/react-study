@@ -24,6 +24,11 @@ const IterationSample = () => {
     const nextNames = names.filter((name) => name.id !== id);
     setNames(nextNames);
   };
+  const onKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      onClick();
+    }
+  };
   const namesList = names.map((name) => {
     return (
       <li key={name.id} onDoubleClick={() => onRemove(name.id)}>
@@ -34,7 +39,11 @@ const IterationSample = () => {
 
   return (
     <>
-      <input value={inputText} onChange={onChangeInput}></input>
+      <input
+        value={inputText}
+        onChange={onChangeInput}
+        onKeyPress={onKeyPress}
+      ></input>
       <button onClick={onClick}>입력</button>
       <ul>{namesList}</ul>
     </>
