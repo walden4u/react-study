@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 
 class CounterC extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      number: 0,
-      fixedNumber: 0
-    };
-  }
+  state = {
+    number: 0,
+    fixedNumber: 0
+  };
 
   // onClickCounter = () => {
   //   this.setState({ number: this.state.number + 1 });
