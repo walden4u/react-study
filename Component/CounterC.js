@@ -7,9 +7,10 @@ class CounterC extends Component {
   };
 
   onClickCounter = () => {
-    this.setState({ number: this.number + 1 });
-    this.setState({ number: this.state.number + 1 });
-    this.setState({ number: this.state.number + 1 });
+    this.setState((prev) => {
+      return { number: prev.number + 1 };
+    });
+    this.setState((prev) => ({ number: prev.number + 1 }));
   };
 
   render() {
