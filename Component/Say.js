@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Say = () => {
   const [message, setMessage] = useState('');
-  const [colorName, setColorName] = useState('');
+  const [colorName, setColorName] = useState('black');
 
   const onClickIn = () => setMessage('환영합니다!');
   const onClickOut = () => setMessage('안녕히가세요!');
