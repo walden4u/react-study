@@ -16,7 +16,7 @@ class CounterC extends Component {
     return (
       <>
         <div>{this.state.number}</div>
-        <button onClick={this.onClickCounter.bind(this)}>카운터</button>
+        <button onClick={this.onClickCounter}>카운터</button>
       </>
     );
   }
