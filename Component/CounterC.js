@@ -8,15 +8,21 @@ class CounterC extends Component {
     };
   }
 
-  onClickCounter = () => {
-    this.setState({ number: this.state.number + 1 });
-  };
+  // onClickCounter = () => {
+  //   this.setState({ number: this.state.number + 1 });
+  // };
 
   render() {
     return (
       <>
         <div>{this.state.number}</div>
-        <button onClick={this.onClickCounter}>카운터</button>
+        <button
+          onClick={() => {
+            this.setState({ number: this.state.number + 1 });
+          }}
+        >
+          카운터
+        </button>
       </>
     );
   }
