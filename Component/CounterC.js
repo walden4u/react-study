@@ -4,7 +4,8 @@ class CounterC extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      number: 0
+      number: 0,
+      fixedNumber: 0
     };
   }
 
@@ -15,7 +16,8 @@ class CounterC extends Component {
   render() {
     return (
       <>
-        <div>{this.state.number}</div>
+        <div>바뀌는 값: {this.state.number}</div>
+        <div>안바뀌는 값: {this.state.fixedNumber}</div>
         <button
           onClick={() => {
             this.setState({ number: this.state.number + 1 });
