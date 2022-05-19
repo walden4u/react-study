@@ -19,7 +19,7 @@ class CounterC extends Component {
     return (
       <>
         <div>바뀌는 값:{this.state.counter}</div>
-        <button onClick={this.onClickPlus.bind(this)}>+1</button>
+        <button onClick={this.onClickPlus}>+1</button>
       </>
     );
   }
