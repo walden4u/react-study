@@ -14,10 +14,16 @@ class CounterC extends Component {
   // }
   onClickPlus = () => {
     //setState에 객체가 아닌 함수로 전달
-    this.setState((prev) => ({ counter: prev.counter + 1 })); //객체값 리턴일 경우 ()필요함
-    this.setState((prev) => {
-      return { counter: prev.counter + 1 };
-    });
+    this.setState(
+      (prev) => ({ counter: prev.counter + 1 }),
+      () => console.log('setState1이 실행되었습니다.')
+    ); //객체값 리턴일 경우 ()필요함
+    this.setState(
+      (prev) => {
+        return { counter: prev.counter + 1 };
+      },
+      () => console.log(this.state)
+    );
   };
 
   render() {
