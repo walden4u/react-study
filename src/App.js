@@ -1,5 +1,5 @@
 import './App.css';
-import ScrollBox from '../Component/3_Say';
+import ScrollBox from '../Component/3_SayC';
 
 const App = () => {
   return (
