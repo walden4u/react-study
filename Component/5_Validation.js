@@ -25,12 +25,14 @@ class Validation extends Component {
         clicked: true
       });
     }
+    this.input.focus();
   };
 
   render() {
     return (
       <>
         <input
+          ref={(ref) => (this.input = ref)}
           onChange={this.onChangeInput}
           value={this.state.inputValue}
           className={
