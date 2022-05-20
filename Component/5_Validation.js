@@ -6,7 +6,8 @@ class Validation extends Component {
     super(props);
     this.state = {
       inputValue: '',
-      validate: false
+      validate: false,
+      clicked: false
     };
   }
 
@@ -15,7 +16,14 @@ class Validation extends Component {
   };
   onClickButton = () => {
     if (this.state.inputValue === '0000') {
-      this.setState({ validate: true });
+      this.setState({
+        validate: true,
+        clicked: true
+      });
+    } else {
+      this.setState({
+        clicked: true
+      });
     }
   };
 
@@ -25,7 +33,13 @@ class Validation extends Component {
         <input
           onChange={this.onChangeInput}
           value={this.state.inputValue}
-          className={this.state.validate ? 'success' : 'failure'}
+          className={
+            this.state.clicked
+              ? this.state.validate
+                ? 'success'
+                : 'failure'
+              : null
+          }
         ></input>
         <button onClick={this.onClickButton}>Validation</button>
       </>
