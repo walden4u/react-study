@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const EventPractice = () => {
-  const [id, setId] = useState('');
-  const [password, setPassword] = useState('');
+  const [form, setForm] = useState({
+    id: '',
+    password: ''
+  });
+  const { id, password } = form;
 
+  const onChageInput = (e) => {
+    const nextForm = {
+      ...form,
+      [e.target.name]: e.target.value
+    };
+    setForm(nextForm);
+  };
   const onClickButton = () => {
     console.log(id + ': ' + password);
-    setId('');
-    setPassword('');
+    setForm({
+      id: '',
+      password: ''
+    });
   };
 
   const onKeyPressInput = (e) => {
@@ -20,7 +32,7 @@ const EventPractice = () => {
     <>
       <h1>이벤트 연습</h1>
       <input
-        onChange={(e) => setId(e.target.value)}
+        onChange={onChageInput}
         type="text"
         name="id"
         value={id}
@@ -28,7 +40,7 @@ const EventPractice = () => {
         onKeyPress={onKeyPressInput}
       />
       <input
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={onChageInput}
         type="password"
         name="password"
         value={password}
