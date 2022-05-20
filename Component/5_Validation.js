@@ -10,6 +10,7 @@ class Validation extends Component {
       clicked: false
     };
   }
+  inputRef = React.createRef();
 
   onChangeInput = (e) => {
     this.setState({ inputValue: e.target.value });
@@ -25,14 +26,15 @@ class Validation extends Component {
         clicked: true
       });
     }
-    this.input.focus();
+    this.inputRef.current.focus();
   };
 
   render() {
     return (
       <>
         <input
-          ref={(ref) => (this.input = ref)}
+          // ref={(ref) => (this.input = ref)}
+          ref={this.inputRef}
           onChange={this.onChangeInput}
           value={this.state.inputValue}
           className={
