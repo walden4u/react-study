@@ -13,8 +13,17 @@ const IterationSample = () => {
   const [nextId, setNextId] = useState(5);
   const inputRef = useRef();
 
+  const onRemove = (id) => {
+    const nextNames = names.filter((v) => v.id !== id);
+    setNames(nextNames);
+  };
+
   const namesList = names.map((v) => {
-    return <li key={v.id}>{v.name}</li>;
+    return (
+      <li onDoubleClick={() => onRemove(v.id)} key={v.id}>
+        {v.name}
+      </li>
+    );
   });
 
   const onChangeInput = (e) => {
