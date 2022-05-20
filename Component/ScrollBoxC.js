@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ScrollBox extends Component {
+class ScrollBoxC extends Component {
   scrollToBottom = () => {
     const { scrollHeight, clientHeight } = this.box;
     this.box.scrollTop = scrollHeight - clientHeight;
@@ -34,4 +34,4 @@ class ScrollBox extends Component {
   }
 }
 
-export default ScrollBox;
+export default ScrollBoxC;
