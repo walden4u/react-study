@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ValidationSample.css';
 
-class Validation extends Component {
+class ValidationC extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,4 +51,4 @@ class Validation extends Component {
   }
 }
 
-export default Validation;
+export default ValidationC;

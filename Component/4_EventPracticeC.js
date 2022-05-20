@@ -9,6 +9,8 @@ class EventPracticeC extends Component {
     };
   }
 
+  inputRef = React.createRef();
+
   onChangeInput = (e) => {
     // console.log(e.target.name);
     // console.log(e);
@@ -18,6 +20,7 @@ class EventPracticeC extends Component {
   onClickButton = () => {
     this.setState({ id: '', password: '' });
     console.log(this.state.id + ': ' + this.state.password);
+    this.inputRef.current.focus();
   };
 
   onKeyInput = (e) => {
@@ -29,6 +32,7 @@ class EventPracticeC extends Component {
       <>
         <h1>이벤트 연습</h1>
         <input
+          ref={this.inputRef}
           onChange={this.onChangeInput}
           onKeyPress={this.onKeyInput}
           value={this.state.id}
