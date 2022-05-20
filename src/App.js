@@ -1,5 +1,5 @@
 import './App.css';
-import ScrollBox from '../Component/6_IterationSample';
+import ScrollBox from '../Component/6_IterationSampleC';
 
 const App = () => {
   return (
