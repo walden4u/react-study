@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const IterationSample = () => {
   // const name = ['눈사람', '얼음', '눈', '바람'];
@@ -11,6 +11,7 @@ const IterationSample = () => {
   ]);
   const [inputValue, setInputValue] = useState('');
   const [nextId, setNextId] = useState(5);
+  const inputRef = useRef();
 
   const namesList = names.map((v) => {
     return <li key={v.id}>{v.name}</li>;
@@ -19,10 +20,30 @@ const IterationSample = () => {
   const onChangeInput = (e) => {
     setInputValue(e.target.value);
   };
+
+  const onClickButton = () => {
+    const nextNames = [...names, { id: nextId, name: inputValue }];
+    setNames(nextNames);
+    setNextId(nextId + 1);
+    setInputValue('');
+    inputRef.current.focus();
+  };
+
+  const onKeyPressInput = (e) => {
+    if (e.key === 'Enter') {
+      onClickButton();
+    }
+  };
+
   return (
     <>
-      <input onChange={onChangeInput} value={inputValue}></input>
-      <button>추가</button>
+      <input
+        ref={inputRef}
+        onKeyPress={onKeyPressInput}
+        onChange={onChangeInput}
+        value={inputValue}
+      ></input>
+      <button onClick={onClickButton}>추가</button>
       <ul>{namesList}</ul>
     </>
   );
