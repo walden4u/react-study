@@ -32,8 +32,13 @@ class IterationSampleC extends Component {
       nextId: prev.nextId + 1
     }));
   };
+
   render() {
-    const namesList = this.state.names.map((v) => <li key={v.id}>{v.name}</li>);
+    const namesList = this.state.names.map((v) => (
+      <li onDoubleClick={this.onRemove} key={v.id}>
+        {v.name}
+      </li>
+    ));
     // console.log('render');
     return (
       <>
