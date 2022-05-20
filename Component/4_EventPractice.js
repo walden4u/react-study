@@ -6,6 +6,7 @@ const EventPractice = () => {
     password: ''
   });
   const { id, password } = form;
+  const inputRef = useRef();
 
   const onChageInput = (e) => {
     const nextForm = {
@@ -20,6 +21,7 @@ const EventPractice = () => {
       id: '',
       password: ''
     });
+    inputRef.current.focus();
   };
 
   const onKeyPressInput = (e) => {
@@ -32,6 +34,7 @@ const EventPractice = () => {
     <>
       <h1>이벤트 연습</h1>
       <input
+        ref={inputRef}
         onChange={onChageInput}
         type="text"
         name="id"
