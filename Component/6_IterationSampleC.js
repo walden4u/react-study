@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class IterationSampleC extends Component {
   constructor(props) {
     super(props);
     this.state = {
       names: [
-        { id: 1, name: "물" },
-        { id: 2, name: "바람" },
-        { id: 3, name: "숲" },
-        { id: 4, name: "바위" }
+        { id: 1, name: '물' },
+        { id: 2, name: '바람' },
+        { id: 3, name: '숲' },
+        { id: 4, name: '바위' }
       ],
-      inputText: "",
+      inputText: '',
       nextId: 5
     };
   }
@@ -29,7 +29,7 @@ class IterationSampleC extends Component {
     // console.log(nextNames);
     this.setState({
       names: nextNames,
-      inputText: ""
+      inputText: ''
     });
     this.setState((prev) => ({
       nextId: prev.nextId + 1
@@ -38,18 +38,22 @@ class IterationSampleC extends Component {
   };
 
   onKeyPressEnter = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       this.onClickButton();
     }
   };
 
+  onRemove = (id) => {
+    const nextNames = this.state.names.filter((v) => v.id !== id);
+    this.setState({ names: nextNames });
+  };
   render() {
     const namesList = this.state.names.map((v) => (
-      <li onDoubleClick={this.onRemove} key={v.id}>
+      <li onDoubleClick={() => this.onRemove(v.id)} key={v.id}>
         {v.name}
       </li>
     ));
-    console.log("render");
+    console.log('render');
     return (
       <>
         <input
@@ -59,7 +63,7 @@ class IterationSampleC extends Component {
           value={this.state.inputText}
         ></input>
         <button onClick={this.onClickButton}>추가</button>
-        <ul>{namesList}</ul>
+        <ul onDoubleClick={this.onDoubleClickUl}>{namesList}</ul>
       </>
     );
   }
