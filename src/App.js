@@ -1,5 +1,5 @@
 import './App.css';
-import ScrollBox from '../Component/8_Info';
+import ScrollBox from '../Component/InfoReducer';
 
 const App = () => {
   return (

@@ -17,8 +17,12 @@ const CounterReducer = () => {
 
   return (
     <>
-      <input onChange={onChangeInput}></input>
-      <input onChange={onChangeInput}></input>
+      <input name="name" onChange={onChangeInput} placeholder="name"></input>
+      <input
+        name="nickname"
+        onChange={onChangeInput}
+        placeholder="nickname"
+      ></input>
       <h2>이름: {state.name}</h2>
       <h2>닉네임: {state.nickname}</h2>
     </>
