@@ -11,7 +11,7 @@ function Info() {
       console.log('cleanup');
       console.log(name);
     };
-  }, [name]);
+  }, []);
 
   return (
     <>
