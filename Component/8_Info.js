@@ -5,12 +5,12 @@ function Info() {
   const [nickname, setNickname] = useState('');
 
   useEffect(() => {
-    console.log('rendering done!');
+    console.log('마운트될 때만 실행');
     console.log({
       name,
       nickname
     });
-  });
+  }, []);
 
   return (
     <>
