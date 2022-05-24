@@ -14,8 +14,11 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    if (this.state.isError) return <h1>에러 발생했습니다.!</h1>;
-    else return this.props.children;
+    return this.state.isError ? (
+      <h1>에러 발생했습니다.!</h1>
+    ) : (
+      this.props.children
+    );
   }
 }
 
