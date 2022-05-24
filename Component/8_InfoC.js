@@ -8,15 +8,16 @@ class InfoC extends Component {
 
   render() {
     const { name, nickname } = this.state;
+    console.log('render');
     return (
       <>
         <input
-          onChange={(e) => this.setState(e.target.value)}
+          onChange={(e) => this.setState({ name: e.target.value })}
           value={name}
           placeholder="name"
         ></input>
         <input
-          onChange={(e) => this.setState(e.target.value)}
+          onChange={(e) => this.setState({ nickname: e.target.value })}
           value={nickname}
           placeholder="nickname"
         ></input>
