@@ -7,20 +7,21 @@ class InfoC extends Component {
   };
 
   render() {
+    const { name, nickname } = this.state;
     return (
       <>
         <input
           onChange={(e) => this.setState(e.target.value)}
-          value={this.name}
+          value={name}
           placeholder="name"
         ></input>
         <input
           onChange={(e) => this.setState(e.target.value)}
-          value={this.nickname}
+          value={nickname}
           placeholder="nickname"
         ></input>
-        <h2>이름: {this.name}</h2>
-        <h2>별명: {this.nickname}</h2>
+        <h2>이름: {name}</h2>
+        <h2>별명: {nickname}</h2>
       </>
     );
   }
